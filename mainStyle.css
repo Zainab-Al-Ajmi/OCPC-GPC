@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inkunt antiqua;
+
+}
+
+body{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #6262A8;
+}
+
+.container{
+    max-width: 750px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.container .Header {
+    font-size: 25px;
+    font-weight: 500;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.container .title {
+    font-size: 16px;
+    font-weight: 500;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #F64B7D;
+  
+}
+
+.container {
+    text-align: justify;
+    line-height: 1.5;
+
+}
+
+button{
+    margin: 10px 0;
+    background: #F64B7D;
+    width: 25%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-left: 38.5%;
+
+
+}
+
+button:hover{
+    /* transform: scale(0.99); */
+    background: #d9d9d9;
+    color:#F64B7D ;
+    font-weight: bold;
+}
+
+hr { 
+    height: 1.5px; 
+    background-color: #FFC404; 
+    border: none;
+}
+
+.container .Header img{
+    width: 40px;
+    height: 35px;
+    float: left;
+    margin-left: 15px;
+  }
