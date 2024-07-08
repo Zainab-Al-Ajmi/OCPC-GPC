@@ -19,13 +19,64 @@
         <br />
         <br />
         <div>
-            <p class="subtitle"><span style="color: #AF291D;"> Team </span> Information</p>
-            <br />
+            <p class="subtitle"><span style="color: #000000;"> Team </span> Information</p>
+            <br /><br />
             <form>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Team Name</span>
+                        <input
+                          type="text"
+                          name="Team_name"
+                          placeholder="Your team name"
+                          required
+                        />
+                    </div>
+          
+                    <div class="input-box" style="margin-left: 35px;">
+                        <span class="details">University Name</span>
+                        <input
+                          type="text"
+                          name="university_name"
+                          placeholder="Write the full name as in the official documents"
+                          required
+                        />
+                    </div>            
+                      
+                    <div class="input-box">
+                        <span class="details">Country</span>
+                        <select name="country" class="selection" required>
+                          <option value="" disabled selected>Country</option>
+                          <option value="Oman">Oman</option>
+                          <option value="Bahrain">Bahrain</option>
+                          <option value="KSA">KSA</option>
+                          <option value="Kuwait">Kuwait</option>
+                          <option value="Qatar">Qatar</option>
+                          <option value="UAE">UAE</option>
+                          <option value="Other">Other (Arab and International) </option>
+                        </select>
+                    </div>            
+                      
+                    <div class="input-box" style="margin-left: 35px;">
+                        <span class="details">Official communication email</span>
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="email@gmail.com "
+                          required
+                        />
+                    </div> 
 
-
-
-
+                    <div class="input-box">
+                          <span class="details">Mobile Number</span>
+                          <input
+                            type="text"
+                            name="phone_number"
+                            placeholder="+968 00000000"
+                            required
+                          />
+                    </div>
+                </div>
             </form>
             
         </div>
@@ -33,7 +84,7 @@
         <hr style="margin-top: 250px;"/>
         <br />
         <div>
-            <a href=''> 
+            <a href='coachInfo.html'> 
                 <button type="button" >Next</button> 
             </a>        
         </div>
