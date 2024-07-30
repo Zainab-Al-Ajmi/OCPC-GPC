@@ -4,7 +4,43 @@
     <meta charset="UTF-8" />
     <title>Landing Page</title>
     <link rel="stylesheet" href='mainStyle.css'  />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    
+    <style>
+      .checkbox-container {
+        display: flex;
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+        margin: 20px 70px;
+      }              
+      .checkbox-container .checkmark {
+        display: inline-block;
+        width: 200px;
+        height:200px;
+        border: 2px solid rgb(255, 196, 4, 0.2);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: 0.3s;
+        background-color: rgb(255, 196, 4, 0.2);
+      }
+      .checkbox-container .checkmark img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        transition: 0.3s;
+        padding: 0 5px;
+      }
+      .checkbox-container input:checked + .checkmark {
+        border-color: #F64B7D;
+      }
+      .checkbox-container input {
+        display: none;
+      }
+      .container_box{ 
+        display: flex;
+        width: 100%;  }
+    </style>
   </head>
 
   <body>
@@ -19,24 +55,48 @@
         <br />
         <br />
         <div>
-            <p>Choose the <span style="color: #F64B7D;"> contest </span> you are registering in:</p>
-            <br /><br />
-            <div class="choose" style="float: left; margin-left: 10%;">
-              <br /><br />
-              <img src="GPC.jpg" alt="gpc logo" >
-              <br />
-            </div> 
+            <p class="subtitle" style="margin-bottom: 20px;">Choose the <span style="color: #F64B7D;"> contests </span> you are registering in:</p>
+            <br />
+
+            <div class="container_box"> 
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox">
+                  <span class="checkmark"><img src="GPC.jpg" alt="gpc logo"></span>
+                </label>
+              </div>
+              
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox">
+                  <span class="checkmark"><img src="OCPC.png" alt="ocpc logo"></span>
+                </label>
+              </div>
+            </div>
             
-            <div class="choose" style="float: right; margin-right: 10%;">
-              <img src="OCPC.png" alt="ocpc logo" style="height: 200px;">
-              <br />
-            </div> 
+            <div class="container_box"> 
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox">
+                  <span class="checkmark"><img src="CodeAcademyLogo.png" alt="gpc logo"></span>
+                </label>
+              </div> 
+              
+              <div>
+                <label class="checkbox-container">
+                  <input type="checkbox">
+                  <span class="checkmark"><img src="GPC.jpg" alt="gpc logo"></span>
+                </label>
+              </div> 
+            </div>
+            
+
         </div>
         <br />
-        <hr style="margin-top: 250px;"/>
+        <hr />
         <br />
         <div>
-          <a href='coachInfo.html'> 
+          <a href='coachTeamInfo.html'> 
             <button type="button" >Next</button> 
           </a>
         </div>

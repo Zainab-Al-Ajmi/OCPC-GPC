@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Coach Information</title>
+    <title>Coach and Team Information</title>
     <link rel="stylesheet" href='mainStyle.css'  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -17,13 +17,13 @@
       <br />
       <hr />
       <br />
-      <br />
-      <div class="content">      
-        <p class="subtitle"><span style="color:#F64B7D;"> Coach </span> Information</p>
-        <br />
+      <div class="content">              
         <form method="post">
           <!--{% csrf_token %}-->
           <div class="user-details">
+            <div class="subdetails">
+              <p class="subtitle"><span style="color:#F64B7D;"> Coach </span> Information</p>
+              <br /><br />
               <div class="input-box">
                 <span class="details">Coach Name</span>
                 <input
@@ -66,6 +66,55 @@
                     required
                   />
               </div>
+            </div>
+            <div class="subdetails">
+              <p class="subtitle"><span style="color: #F64B7D;"> Team </span> Information</p>
+              <br /><br />
+              <div class="input-box">
+                <span class="details">Team Name</span>
+                <input
+                  type="text"
+                  name="Team_name"
+                  placeholder="Your team name"
+                  required
+                />
+            </div>
+            
+            <div class="input-box">
+              <span class="details">University Name</span>
+              <input
+                type="text"
+                name="university_name"
+                placeholder="Write the full name as in the official documents"
+                required
+              />
+            </div>
+              
+            <div class="input-box">
+                <span class="details">Country</span>
+                <select name="country" class="selection" required>
+                  <option value="" disabled selected>Country</option>
+                  <option value="Oman">Oman</option>
+                  <option value="Bahrain">Bahrain</option>
+                  <option value="KSA">KSA</option>
+                  <option value="Kuwait">Kuwait</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="UAE">UAE</option>
+                  <option value="Other">Other (Arab and International) </option>
+                </select>
+            </div>            
+                                  
+            <div class="input-box">
+                  <span class="details">Mobile Number</span>
+                  <input
+                    type="text"
+                    name="phone_number"
+                    placeholder="+968 00000000"
+                    required
+                  />
+            </div>
+            </div>
+              
           </div>
           <br/>                    
         </form>
@@ -74,7 +123,7 @@
       <hr />
       <br />
       <div>
-        <a href='teamInfo.html'> 
+        <a href='Member1Info.html'> 
           <button type="button">Next</button> 
         </a>
       </div>

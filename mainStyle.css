@@ -192,7 +192,7 @@ button:hover{
   font-weight: 500;
 }
 
-form .subdetails{
+.subdetails{
   display: block;
   width: 100%;
   padding: 10px;
@@ -215,16 +215,3 @@ form .subdetails{
   margin-right: 20px; /* Adjust space between image and title */
 }
 
-.choose {
-  width: 30%;
-  background-color: rgb(255, 196, 4, 0.2);
-  height: 200px;
-  border-radius: 4px;
-  border: none;
-}
-
-.choose img{
-  padding: 8px;
-  width: 200px;
-  height: 100px;
-}
