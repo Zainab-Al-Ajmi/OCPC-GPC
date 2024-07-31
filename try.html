@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <style>
+        .file-upload-container {
+            margin-top: 20px; /* Adjust spacing as needed */
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            color: white;
+            padding: 5px 5px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .upload-icon {
+            margin-right: 8px; /* Adjust spacing as needed */
+        }
+
+        .file-display {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-left: 20px; /* Adjust spacing as needed */
+            min-width: 200px; /* Adjust size as needed */
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="file-upload-container">
+        <label for="fileUpload" class="custom-file-upload">
+            <span class="upload-icon"><img src="file.png" alt="upload logo"></span> 
+        </label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx">
+        <div id="fileDisplay" class="file-display"></div>
+    </div>
+
+    <script >
+        document.getElementById('fileUpload').addEventListener('change', function() {
+            var file = this.files[0];
+            var fileName = file ? file.name : 'No file chosen';
+            document.getElementById('fileDisplay').textContent = fileName;
+        });
+        
+    </script> <!-- Link to the JavaScript file -->
+</body>
+</html>

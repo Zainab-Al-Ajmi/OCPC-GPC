@@ -10,11 +10,10 @@
   <body>
     <div class="container">
       <div class="Header">
-        <img src="CodeAcademyLogo.png" alt="the_logo">
-        <span>GPC2024/OCPC2024 - Pre-registration Form</span>
-        <br />
+        <img src="OCPC.png" alt="OCPC_logo" class="headerimg1">
+        <span>Oman Colligate Programming Contest</span>
+        <img src="OCD.png" alt="OCD_logo" class="headerImg2">
       </div>
-      <br />
       <hr />
       <br />
       <div class="content">              
@@ -42,7 +41,26 @@
                   <option value="Male">Male</option>
                 </select>
               </div> 
-              
+
+              <div class="input-box">
+                <span class="details">Official communication Mobile Number</span>
+                <input
+                  type="text"
+                  name="phone_number"
+                  placeholder="+968 00000000"
+                  required
+                />
+              </div>
+
+              <div class="input-box">
+                  <span class="details">Official communication email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email@gmail.com "
+                    required
+                  />
+              </div>                           
               <div class="input-box" >
                 <span class="details">Coach1 T-shirt size</span>
                 <select name="gender" class="selection" required>
@@ -56,16 +74,6 @@
                   <option value="not required">T-Shirt is not required</option>
                 </select>
               </div> 
-
-              <div class="input-box">
-                  <span class="details">Official communication email</span>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="email@gmail.com "
-                    required
-                  />
-              </div>
             </div>
             <div class="subdetails">
               <p class="subtitle"><span style="color: #F64B7D;"> Team </span> Information</p>
@@ -82,39 +90,11 @@
             
             <div class="input-box">
               <span class="details">University Name</span>
-              <input
-                type="text"
-                name="university_name"
-                placeholder="Write the full name as in the official documents"
-                required
-              />
-            </div>
-              
-            <div class="input-box">
-                <span class="details">Country</span>
-                <select name="country" class="selection" required>
-                  <option value="" disabled selected>Country</option>
-                  <option value="Oman">Oman</option>
-                  <option value="Bahrain">Bahrain</option>
-                  <option value="KSA">KSA</option>
-                  <option value="Kuwait">Kuwait</option>
-                  <option value="Qatar">Qatar</option>
-                  <option value="UAE">UAE</option>
-                  <option value="Other">Other (Arab and International) </option>
-                </select>
-            </div>            
-                                  
-            <div class="input-box">
-                  <span class="details">Mobile Number</span>
-                  <input
-                    type="text"
-                    name="phone_number"
-                    placeholder="+968 00000000"
-                    required
-                  />
-            </div>
-            </div>
-              
+              <select name="university_name" class="selection" required>
+                <option value="" disabled selected>Choose the university name</option>
+                <option value=""></option>
+              </select>
+            </div>                                      
           </div>
           <br/>                    
         </form>
