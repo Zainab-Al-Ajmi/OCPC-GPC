@@ -3,60 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Upload</title>
-    <style>
-        .file-upload-container {
-            margin-top: 20px; /* Adjust spacing as needed */
-            display: flex;
-            align-items: center;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        .custom-file-upload {
-            color: white;
-            padding: 5px 5px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .upload-icon {
-            margin-right: 8px; /* Adjust spacing as needed */
-        }
-
-        .file-display {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-left: 20px; /* Adjust spacing as needed */
-            min-width: 200px; /* Adjust size as needed */
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-        }
-    </style>
+    <title>Custom Checkbox</title>
 </head>
 <body>
-    <div class="file-upload-container">
-        <label for="fileUpload" class="custom-file-upload">
-            <span class="upload-icon"><img src="file.png" alt="upload logo"></span> 
+    <!-- Container for the custom checkbox and photo -->
+    <div class="checkbox-container" style="position: relative; display: inline-block;">
+        <!-- Hidden default checkbox -->
+        <input type="checkbox" id="checkbox1" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
+        <!-- Label element to style the custom checkbox and include the photo -->
+        <label for="checkbox1" style="display: flex; align-items: center; cursor: pointer;">
+            <!-- Image element for the photo -->
+            <img src="path/to/photo1.jpg" alt="Photo 1" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
+            <!-- Span element to create the custom checkbox -->
+            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
         </label>
-        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx">
-        <div id="fileDisplay" class="file-display"></div>
+    </div>
+    <!-- Repeat for other checkboxes -->
+    <div class="checkbox-container" style="position: relative; display: inline-block;">
+        <input type="checkbox" id="checkbox2" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
+        <label for="checkbox2" style="display: flex; align-items: center; cursor: pointer;">
+            <img src="path/to/photo2.jpg" alt="Photo 2" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
+            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
+        </label>
+    </div>
+    <div class="checkbox-container" style="position: relative; display: inline-block;">
+        <input type="checkbox" id="checkbox3" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
+        <label for="checkbox3" style="display: flex; align-items: center; cursor: pointer;">
+            <img src="path/to/photo3.jpg" alt="Photo 3" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
+            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
+        </label>
+    </div>
+    <div class="checkbox-container" style="position: relative; display: inline-block;">
+        <input type="checkbox" id="checkbox4" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
+        <label for="checkbox4" style="display: flex; align-items: center; cursor: pointer;">
+            <img src="path/to/photo4.jpg" alt="Photo 4" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
+            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
+        </label>
     </div>
 
-    <script >
-        document.getElementById('fileUpload').addEventListener('change', function() {
-            var file = this.files[0];
-            var fileName = file ? file.name : 'No file chosen';
-            document.getElementById('fileDisplay').textContent = fileName;
-        });
-        
-    </script> <!-- Link to the JavaScript file -->
+    <script>
+        function updateCheckmark(checkbox) {
+            var checkmark = checkbox.nextElementSibling.querySelector('.checkmark');
+            if (checkbox.checked) {
+                switch (checkbox.id) {
+                    case 'checkbox1':
+                        checkmark.style.borderColor = '#3A225E';
+                        break;
+                    case 'checkbox2':
+                        checkmark.style.borderColor = '#FFCC1B';
+                        break;
+                    case 'checkbox3':
+                        checkmark.style.borderColor = '#C83762';
+                        break;
+                    case 'checkbox4':
+                        checkmark.style.borderColor = '#3A225E';
+                        break;
+                    default:
+                        checkmark.style.borderColor = '#000';
+                        break;
+                }
+            } else {
+                checkmark.style.borderColor = '#000'; // Default color when not checked
+            }
+        }
+    </script>
 </body>
 </html>
+

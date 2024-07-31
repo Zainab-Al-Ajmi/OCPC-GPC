@@ -35,7 +35,7 @@
 
               <div class="input-box">
                 <span class="details">Coach Gender</span>
-                <select name="gender" class="selection" required>
+                <select name="coach_gender" class="selection" required>
                   <option value="" disabled selected>Gender</option>
                   <option value="Female">Female</option>
                   <option value="Male">Male</option>
@@ -46,7 +46,7 @@
                 <span class="details">Official communication Mobile Number</span>
                 <input
                   type="text"
-                  name="phone_number"
+                  name="official_phone_number"
                   placeholder="+968 00000000"
                   required
                 />
@@ -56,14 +56,14 @@
                   <span class="details">Official communication email</span>
                   <input
                     type="email"
-                    name="email"
+                    name="official_email"
                     placeholder="email@gmail.com "
                     required
                   />
               </div>                           
               <div class="input-box" >
                 <span class="details">Coach1 T-shirt size</span>
-                <select name="gender" class="selection" required>
+                <select name="Coach_Tshirt_size" class="selection" required>
                   <option value="" disabled selected>Choose the T-shirt size</option>
                   <option value="XS">XS</option>
                   <option value="S">S</option>
@@ -108,16 +108,5 @@
         </a>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("course-select")
-        .addEventListener("change", function () {
-          var selectedOption = this.options[this.selectedIndex];
-          var coursePrice = selectedOption.text.split(" - ")[1];
-          document.getElementById("course-price").innerText =
-            "Price: " + coursePrice;
-        });
-    </script>
   </body>
 </html>

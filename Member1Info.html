@@ -9,24 +9,24 @@
 
   <body>
     <div class="container">
-      <div class="Header">
-        <img src="OCPC.png" alt="OCPC_logo" class="headerimg1">
-        <span>Oman Colligate Programming Contest</span>
-        <img src="OCD.png" alt="OCD_logo" class="headerImg2">
-      </div>
+        <div class="Header">
+          <img src="OCPC.png" alt="OCPC_logo" class="headerimg1">
+          <span>Oman Colligate Programming Contest</span>
+          <img src="OCD.png" alt="OCD_logo" class="headerImg2">
+        </div>
         <hr />
         <br />
         <br />
         <div>
             <p class="subtitle"><span style="color:#F64B7D;"> Member 1 </span> Information</p>
             <br /><br />
-            <form>
+            <form method="post">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Full Name</span>
                         <input
                           type="text"
-                          name="Member1_name"
+                          name="member1_name"
                           placeholder="Your first, second and third name"
                           required
                         />
@@ -46,15 +46,15 @@
                         <span class="details">Birth date</span>
                         <input
                           type="text"
-                          name="birth_date"
+                          name="member1_birth_date"
                           placeholder="00/0/0000"
                           required
                         />
                     </div>
 
                     <div class="input-box">
-                        <span class="details">Coach Gender</span>
-                        <select name="gender" class="selection" required>
+                        <span class="details">Member 1 Gender</span>
+                        <select name="member1_gender" class="selection" required>
                           <option value="" disabled selected>Gender</option>
                           <option value="Female">Female</option>
                           <option value="Male">Male</option>
@@ -65,7 +65,7 @@
                         <span class="details">Major/Specialization</span>
                         <input
                           type="text"
-                          name="specialization"
+                          name="member1_specialization"
                           placeholder="Your specilalization/major"
                           required
                         />
@@ -75,7 +75,7 @@
                         <span class="details">Official communication email</span>
                         <input
                           type="email"
-                          name="email"
+                          name="member1_email"
                           placeholder="email@gmail.com "
                           required
                         />
@@ -83,7 +83,7 @@
                                         
                     <div class="input-box" >
                         <span class="details">Member 1 T-shirt size</span>
-                        <select name="gender" class="selection" required>
+                        <select name="member1_Tshirt_size" class="selection" required>
                           <option value="" disabled selected>Choose the T-shirt size</option>
                           <option value="XS">XS</option>
                           <option value="S">S</option>

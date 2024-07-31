@@ -4,43 +4,8 @@
     <meta charset="UTF-8" />
     <title>Landing Page</title>
     <link rel="stylesheet" href='mainStyle.css'  />
+    <link rel="stylesheet" href='LandingPageStyle.css'  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-    
-    <style>
-      .checkbox-container {
-        display: flex;
-        position: relative;
-        cursor: pointer;
-        width: 100%;
-        margin: 20px 70px;
-      }              
-      .checkbox-container .checkmark {
-        display: inline-block;
-        width: 200px;
-        height:200px;
-        border: 2px solid rgb(255, 196, 4, 0.2);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        transition: 0.3s;
-        background-color: rgb(255, 196, 4, 0.2);
-      }
-      .checkbox-container .checkmark img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-        transition: 0.3s;
-        padding: 0 5px;
-      }
-      .checkbox-container input:checked + .checkmark {
-        border-color: #F64B7D;
-      }
-      .checkbox-container input {
-        display: none;
-      }
-      .container_box{ 
-        display: flex;
-        width: 100%;  }
-    </style>
   </head>
 
   <body>
@@ -56,40 +21,51 @@
         <div>
             <p class="subtitle" style="margin-bottom: 20px;">Choose the <span style="color: #F64B7D;"> contests </span> you are registering in:</p>
             <br />
-
-            <div class="container_box"> 
-              <div>
-                <label class="checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"><img src="GPC.jpg" alt="gpc logo"></span>
-                </label>
+            <form method="post">
+              <div class="container_box"> 
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox" >
+                    <span class="checkmark" id="checkbox1">
+                      <p style="font-weight: 800; font-size: 24px;" >OCPC-<span style="color: #3A225E;">Cap</span></p>
+                      <p> <span style="color: #3A225E;">Capital</span> Sub-region Contest</p>
+                    </span>
+                  </label>
+                </div>
+                
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark" id="checkbox2">
+                      <p style="font-weight: 800; font-size: 24px;" >OCPC-<span style="color: #FFCC1B;">Mid</span> </p>
+                      <p> <span style="color: #FFCC1B ;">Midland</span> Sub-region Contest</p>
+                    </span>
+                  </label>
+                </div>
               </div>
               
-              <div>
-                <label class="checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"><img src="OCPC.png" alt="ocpc logo"></span>
-                </label>
+              <div class="container_box"> 
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark" id="checkbox3">
+                      <p style="font-weight: 800; font-size: 24px;" >OCPC-<span style="color: #C83762 ;"> Cos </span></p>
+                      <p> <span style="color: #C83762;"> Coastline </span> Sub-region Contest </p>
+                    </span>
+                  </label>
+                </div> 
+                
+                <div>
+                  <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark" id="checkbox4">
+                      <p style="font-weight: 800; font-size: 24px;" >OCPC-<span style="color: #3C9C9A ;"> Sth </span></p>
+                      <p> <span style="color: #3C9C9A ;"> Southern </span> Sub-region Contest</p>
+                    </span>
+                  </label>
+                </div> 
               </div>
-            </div>
-            
-            <div class="container_box"> 
-              <div>
-                <label class="checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"><img src="CodeAcademyLogo.png" alt="gpc logo"></span>
-                </label>
-              </div> 
-              
-              <div>
-                <label class="checkbox-container">
-                  <input type="checkbox">
-                  <span class="checkmark"><img src="GPC.jpg" alt="gpc logo"></span>
-                </label>
-              </div> 
-            </div>
-            
-
+            </form>            
         </div>
         <br />
         <hr />
@@ -100,4 +76,32 @@
           </a>
         </div>
     </div>
+
+    <script>
+      function updateCheckmark(checkbox) {
+        var checkmark = checkbox.nextElementSibling.querySelector('.checkmark');
+        if (checkbox.checked) {
+            switch (checkbox.id) {
+                case 'checkbox1':
+                    checkmark.style.borderColor = '#3A225E';
+                    break;
+                case 'checkbox2':
+                    checkmark.style.borderColor = '#FFCC1B';
+                    break;
+                case 'checkbox3':
+                    checkmark.style.borderColor = '#C83762';
+                    break;
+                case 'checkbox4':
+                    checkmark.style.borderColor = '#3A225E';
+                    break;
+                default:
+                    checkmark.style.borderColor = '#000';
+                    break;
+            }
+        } 
+        else {
+            checkmark.style.borderColor = '#000'; // Default color when not checked
+        }
+    }
+  </script>
   </body>
