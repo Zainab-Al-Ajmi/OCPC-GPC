@@ -12,8 +12,11 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: #6262A8;
   flex-direction: column;
+  background-image: url('IMG3.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 p, ol{ 
@@ -43,16 +46,8 @@ p, ol{
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 2;
-  color: #F64B7D;
+  color: #C83762;
 
-}
-
-.content form .user-details{
-  display: block;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-  width: 100%;
 }
 
 form .user-details .input-box{
@@ -98,7 +93,7 @@ select {
 	
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #F64B7D;
+  border-color: #C83762;
 }
 
 form .gender-details .gender-title{
@@ -140,7 +135,7 @@ form input[type="radio"]{
 
 button{
   margin: 10px 0;
-  background: #F64B7D;
+  background: #3A225E;
   width: 25%;
   height: 35px;
   border-radius: 4px;
@@ -158,12 +153,13 @@ button{
 button:hover{
   /* transform: scale(0.99); */
   background: #d9d9d9;
-  color:#F64B7D ;
+  color:#3A225E ;
 }
 
+/*The phone screen*/
 @media(max-width: 584px){
  .container{
-  max-width: 100%;
+    max-width: 100%;
   }
   form .user-details .input-box{
     margin-bottom: 15px;
@@ -178,6 +174,25 @@ button:hover{
   }
   .user-details::-webkit-scrollbar{
     width: 5px;
+  }
+  button { 
+    width: 40%;
+    margin-left: 30%;
+  }
+  .headerimg1 {
+    height: 20px;
+    margin-right: 0;
+  }  
+  .headerImg2 {
+    max-height: 50px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container .Header{
+    font-size: 18px;
+  }
+  .footer img{
+    height: 20px;
   }
 }
 
@@ -201,7 +216,7 @@ button:hover{
 
 .container hr { 
   height: 1.5px; 
-  background-color: #FFC404; 
+  background-color: #3C9C9A; 
   border: none;
 }
 
@@ -224,4 +239,27 @@ button:hover{
   float: right;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
 
+.footer span{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.footer img{
+  max-height: 30px;
+  margin-left: 10px;
+}
+
+.message p{
+  margin: 20px;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 500;
+}

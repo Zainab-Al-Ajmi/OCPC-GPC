@@ -3,70 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Checkbox</title>
+    <title>Multi-Page Form</title>
+    <style>
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Container for the custom checkbox and photo -->
-    <div class="checkbox-container" style="position: relative; display: inline-block;">
-        <!-- Hidden default checkbox -->
-        <input type="checkbox" id="checkbox1" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
-        <!-- Label element to style the custom checkbox and include the photo -->
-        <label for="checkbox1" style="display: flex; align-items: center; cursor: pointer;">
-            <!-- Image element for the photo -->
-            <img src="path/to/photo1.jpg" alt="Photo 1" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
-            <!-- Span element to create the custom checkbox -->
-            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
-        </label>
-    </div>
-    <!-- Repeat for other checkboxes -->
-    <div class="checkbox-container" style="position: relative; display: inline-block;">
-        <input type="checkbox" id="checkbox2" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
-        <label for="checkbox2" style="display: flex; align-items: center; cursor: pointer;">
-            <img src="path/to/photo2.jpg" alt="Photo 2" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
-            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
-        </label>
-    </div>
-    <div class="checkbox-container" style="position: relative; display: inline-block;">
-        <input type="checkbox" id="checkbox3" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
-        <label for="checkbox3" style="display: flex; align-items: center; cursor: pointer;">
-            <img src="path/to/photo3.jpg" alt="Photo 3" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
-            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
-        </label>
-    </div>
-    <div class="checkbox-container" style="position: relative; display: inline-block;">
-        <input type="checkbox" id="checkbox4" class="checkbox" style="display: none;" onchange="updateCheckmark(this)">
-        <label for="checkbox4" style="display: flex; align-items: center; cursor: pointer;">
-            <img src="path/to/photo4.jpg" alt="Photo 4" style="display: block; width: 100px; height: 100px; object-fit: cover; position: relative;">
-            <span class="checkmark" style="width: 20px; height: 20px; background-color: transparent; border: 2px solid #000; border-radius: 50%; display: inline-block; margin-left: 10px;"></span>
-        </label>
+    <div class="container">
+        <form id="multiPageForm" method="post" action="your-server-endpoint">
+            <div class="page active" id="page1">
+                <h2>Page 1</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <button type="button" onclick="nextPage()">Next</button>
+            </div>
+            
+            <div class="page" id="page2">
+                <h2>Page 2</h2>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="button" onclick="prevPage()">Previous</button>
+                <button type="button" onclick="nextPage()">Next</button>
+            </div>
+            
+            <div class="page" id="page3">
+                <h2>Page 3</h2>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br><br>
+                <button type="button" onclick="prevPage()">Previous</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
     <script>
-        function updateCheckmark(checkbox) {
-            var checkmark = checkbox.nextElementSibling.querySelector('.checkmark');
-            if (checkbox.checked) {
-                switch (checkbox.id) {
-                    case 'checkbox1':
-                        checkmark.style.borderColor = '#3A225E';
-                        break;
-                    case 'checkbox2':
-                        checkmark.style.borderColor = '#FFCC1B';
-                        break;
-                    case 'checkbox3':
-                        checkmark.style.borderColor = '#C83762';
-                        break;
-                    case 'checkbox4':
-                        checkmark.style.borderColor = '#3A225E';
-                        break;
-                    default:
-                        checkmark.style.borderColor = '#000';
-                        break;
-                }
-            } else {
-                checkmark.style.borderColor = '#000'; // Default color when not checked
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                page.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
             }
         }
     </script>
 </body>
 </html>
+
 

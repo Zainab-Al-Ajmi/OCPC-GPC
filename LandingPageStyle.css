@@ -51,3 +51,19 @@
     display: flex;
     width: 100%;  
 }
+
+@media(max-width: 584px){
+    .container_box{
+        display: block;
+    }
+
+    .checkbox-container .checkmark {
+        width: 200px;
+        height:130px;
+    }
+
+    .checkbox-container .checkmark p{
+        font-size: 18px;
+        margin: 10px 0;
+    }
+}

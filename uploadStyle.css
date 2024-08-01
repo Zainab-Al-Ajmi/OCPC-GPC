@@ -20,8 +20,8 @@ input[type="file"] {
     margin: 20px 220px;
 }
 .file-display {
-    background-color: rgb(139, 89, 182, 0.15);
-    border: 1.5px solid #9b59b6;
+    background-color: rgb(58, 34, 94, 0.1);
+    border: 1.5px solid #3A225E;
     padding: 10px;
     min-width: 80%;
     min-height: 100px;
@@ -30,4 +30,11 @@ input[type="file"] {
     align-items: center;
     border-radius: 4px;
     margin: 0 10%;
+}
+@media(max-width: 584px){
+    .upload-icon img{
+        width: 30px;
+        height: 30px;
+        margin: 20px 90px;
+    }
 }
